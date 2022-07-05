@@ -21,6 +21,7 @@ This is collection of projects, practices in data engineering foundation
     - Daily scrum
     - Sprint review
 - [DevOps](https://intland.com/codebeamer/devops-it-operations/)
+- [SRE](https://sre.google/books/)
 - [OLAP vs OLTP](https://www.guru99.com/oltp-vs-olap.html)
 - Relational database and SQL are important
 - [Data modeling](https://www.guru99.com/data-modelling-conceptual-logical.html)
@@ -48,4 +49,28 @@ This is collection of projects, practices in data engineering foundation
       - One-to-many
       - Many-to-one
       - Many-to-many
-    - 
+- [Normalization](https://www.edureka.co/blog/normalization-in-sql/)
+  - 1NF, 2NF, 3NF, 4NF
+- Primary key and Foreign key
+- Building a data model with [dbdiagram.io](https://dbdiagram.io/d)
+- Computer networking:
+  - Networking basic
+  - IP address and subnet mask
+  - IP routing
+  - Vlans
+  - Access control list
+  - VPN
+  - Ports
+  - TCP/UDP
+  - Public/private key exchange/ security explained
+  - Security Certificate & CAs
+- Linux:
+  - Important directories /var/log /var/opt /etc /tmp
+  - Copy and move data
+  - Cronjobs
+  - Vi/vim/nano visual editors on command line
+  - Bash/shell script
+  - Permission
+- REST API
+  - [API design](https://cloud.google.com/apis/design)
+  - [Swagger](https://swagger.io)
