@@ -1,9 +1,9 @@
 # Data Engineering Lesson Learn
 This is collection of projects, practices in data engineering foundation
 ## Table of contents
-- [Data_engineering_foundations](#Data_engineering_foundations)
+- [Data engineering foundations](#Data engineering foundations)
 
-## Data_engineering_foundations
+## Data engineering foundations
 - Diagrams:
   - UML diagram
   - Sequence diagram
