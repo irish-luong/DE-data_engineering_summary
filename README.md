@@ -2,6 +2,7 @@
 This is collection of projects, practices in data engineering foundation
 ## Table of contents
 - [Data engineering foundations](#def)
+- [Python for data engineer](#py4de)
 
 ## Data engineering foundations <a name="def"></a>
 - Diagrams:
@@ -74,3 +75,17 @@ This is collection of projects, practices in data engineering foundation
 - REST API
   - [API design](https://cloud.google.com/apis/design)
   - [Swagger](https://swagger.io)
+
+## Python for data engineer <a name="py4de"></a>
+- Advanced Python:
+  - Class
+  - Modules
+  - Exception handling
+  - Logging
+- Data engineering
+  - Work with Datetime format
+  - Work with JSON format
+    - Load, dump
+    - Serialize, deserialize with Pydantic
+    - Validation with [json-schema](https://json-schema.org/draft/2020-12/json-schema-validation.html#name-introduction), [syntax](https://opis.io/json-schema/2.x/formats.html#:~:text=invalid-,date%2Dtime,%3A%3ADDThh%3Amm%3Ass.)
+  - 
