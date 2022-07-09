@@ -1,0 +1,48 @@
+version: "3.7"
+
+volumes:
+  python_4_de:
+
+networks:
+  python_4_de:
+    driver: bridge
+
+services:
+
+  postgres:
+    image: postgres:9.6
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=psycopg
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+    volumes:
+      - ./data:/mnt/data
+    networks:
+      - python_4_de
+    restart: unless-stopped
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+    networks:
+      - python_4_de
+    restart: unless-stopped
+
+  redis:
+    image: redis:latest
+    expose:
+      - "6379"
+    networks:
+      - python_4_de
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 5s
+      timeout: 30s
+      retries: 50
+    restart: unless-stopped

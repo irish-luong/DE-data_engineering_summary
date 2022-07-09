@@ -88,4 +88,23 @@ This is collection of projects, practices in data engineering foundation
     - Load, dump
     - Serialize, deserialize with Pydantic
     - Validation with [json-schema](https://json-schema.org/draft/2020-12/json-schema-validation.html#name-introduction), [syntax](https://opis.io/json-schema/2.x/formats.html#:~:text=invalid-,date%2Dtime,%3A%3ADDThh%3Amm%3Ass.)
-  - 
+  - Testing
+    - [pytest structure](https://blog.methodsconsultants.com/posts/pytesting-your-python-package/)
+  - **Pandas**:
+    - Read from csv
+    - Working with data types
+    - Reading from JSON
+    - Appending dataframes
+    - Merging dataframes
+    - Pivoting dataframes
+    - Saving and reading parquet
+    - **Melting and normalization (JSON)**
+    - Average, min, max of columns in dataframe
+    - Add random value to dataframe
+  - Work with data source/sink
+    - Work with REST API
+    - Work with database
+      - Setup
+      - Table
+      - Bulk load
+      - Query
