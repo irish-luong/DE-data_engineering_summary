@@ -9,6 +9,7 @@ This is collection of projects, practices in data engineering foundation
 ## Table of contents
 - [Data engineering foundations](#def)
 - [Python for data engineer](#py4de)
+- [Platform and Pipeline design foundations](#platform&pipeline)
 
 ## Data engineering foundations <a name="def"></a>
 - Diagrams:
@@ -114,3 +115,5 @@ This is collection of projects, practices in data engineering foundation
       - Table
       - Bulk load
       - Query
+
+## Platform and Pipeline design foundations <a name="platform&pipeline"></a>
