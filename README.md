@@ -1,5 +1,11 @@
+
 # Data Engineering Lesson Learn
 This is collection of projects, practices in data engineering foundation
+
+## Introduction & Goals
+- Summary fundamental skills, knowledge of a Data Engineer.
+- Strengthen theory by practical exercises.
+
 ## Table of contents
 - [Data engineering foundations](#def)
 - [Python for data engineer](#py4de)
