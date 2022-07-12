@@ -9,7 +9,7 @@ This is collection of projects, practices in data engineering foundation
 ## Table of contents
 - [Data engineering foundations](#def)
 - [Python for data engineer](#py4de)
-- [Platform and Pipeline design foundations](#platform&pipeline)
+- [Platform and Pipeline design foundations](#platform&pipelinedesign)
 
 ## Data engineering foundations <a name="def"></a>
 - Diagrams:
@@ -116,4 +116,40 @@ This is collection of projects, practices in data engineering foundation
       - Bulk load
       - Query
 
-## Platform and Pipeline design foundations <a name="platform&pipeline"></a>
+## Platform and Pipeline design foundations <a name="platform&pipelinedesign"></a>
+  - The platform blueprint
+    - Sources
+      - External API
+      - External data warehouse
+      - External SQL/No-SQL database
+    - Temporary storage - buffer
+      - Cache
+      - Message queue
+    - Processing
+      - Batch processing
+      - Stream processing
+    - Persistence storage
+      - SQL database
+      - No-SQL database
+      - DWH
+      - OLAP
+  - Ingestion pipelines
+    - Push ingestion pipeline
+    - Pull ingestion pipeline
+  - Batch pipelines
+    - Store
+    - Processing framework (ELT/ELT)
+    - Scheduling
+    - Workflow orchestration
+  - Stream pipelines
+    - For ingestion purpose (push ingestion pipeline)
+    - Stream analytic
+      - Seed only small window
+      - Immediately processing
+      - Preprocessing on the fly
+      - Push result to
+        - Buffer
+        - Storage
+  - Data visualization pipelines
+  - Machine learning pipelines
+  - Platform in cloud (AWS, Azure, GCP)
