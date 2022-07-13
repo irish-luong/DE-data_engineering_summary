@@ -9,6 +9,7 @@ This is collection of projects, practices in data engineering foundation
 ## Table of contents
 - [Data engineering foundations](#def)
 - [Python for data engineer](#py4de)
+- [SQL intensive](#sqlintensive)
 - [Platform and Pipeline design foundations](#platform&pipelinedesign)
 - [Fundamental tools](#fundamentaltools)
 
@@ -116,6 +117,9 @@ This is collection of projects, practices in data engineering foundation
       - Table
       - Bulk load
       - Query
+
+
+## SQL intensive <a name="sqlintensive" ></a>
 
 ## Platform and Pipeline design foundations <a name="platform&pipelinedesign"></a>
   - The platform blueprint
