@@ -10,6 +10,7 @@ This is collection of projects, practices in data engineering foundation
 - [Data engineering foundations](#def)
 - [Python for data engineer](#py4de)
 - [Platform and Pipeline design foundations](#platform&pipelinedesign)
+- [Fundamental tools](#fundamentaltools)
 
 ## Data engineering foundations <a name="def"></a>
 - Diagrams:
@@ -169,3 +170,15 @@ This is collection of projects, practices in data engineering foundation
     - Open-gateway data publish to subscribers
   - Machine learning pipelines
   - Platform in cloud (AWS, Azure, GCP)
+
+## Fundamental tools <a name=fundamentaltools></a>
+- [Docker](https://www.docker.com/) fundamentals
+- [Kubenestes](https://kubernetes.io/) fundamentals
+- Design API with [FastAPI](https://fastapi.tiangolo.com/)
+- Data-intensive and sharable web-app with [Streamlit](https://streamlit.io/)
+- Apache Spark fundamentals
+- Apache Kafka
+- Apache Airflow
+- MongoDB fundamental
+- Modern data warehouses & data lakes
+- Log analysis with Elasticsearch
