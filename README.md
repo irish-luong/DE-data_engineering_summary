@@ -150,6 +150,22 @@ This is collection of projects, practices in data engineering foundation
       - Push result to
         - Buffer
         - Storage
+  - [**Lambda architecture**](https://hazelcast.com/glossary/lambda-architecture/)
+    - Kafka -> Spark streaming -> [Store 1 for batch, Store for stream]
+    - Airflow -> Spark processing/Python script -> Store 1 -> Store 2
+    - Dashboard -> Store 2
+    ![img_1.png](static/lambda_architecture.png)
+  
+  - [**Kappa architecture**](https://hazelcast.com/glossary/kappa-architecture/)
+    ![img.png](static/kappa_architecture.png)
+
   - Data visualization pipelines
+    - Data store
+      - Operational database
+      - No-SQL database
+      - Data warehouse
+    - Visualization tools (BI tools, Web UI, Dashboard)
+    - API access data from store
+    - Open-gateway data publish to subscribers
   - Machine learning pipelines
   - Platform in cloud (AWS, Azure, GCP)
