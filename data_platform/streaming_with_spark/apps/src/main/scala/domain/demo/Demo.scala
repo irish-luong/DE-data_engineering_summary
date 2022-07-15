@@ -6,6 +6,8 @@ import org.apache.spark.sql.types.{StringType, StructField, StructType}
 
 object Demo {
   def main(args: Array[String]): Unit = {
+
+    println("Hello");
     var spark =
       SparkSession
         .builder
