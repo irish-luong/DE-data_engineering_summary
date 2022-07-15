@@ -173,7 +173,27 @@ This is collection of projects, practices in data engineering foundation
     - API access data from store
     - Open-gateway data publish to subscribers
   - Machine learning pipelines
-  - Platform in cloud (AWS, Azure, GCP)
+  - Platform examples (AWS, Azure, GCP, Hadoop)
+    - AWS
+    ![AWS](static/aws_platform_example.png)
+    - Azure (Source: )
+    ![Azure](static/azure_platform_example.png)
+    - GCP
+    - Hadoop
+    
+
+  - Platform pipeline security
+    - Network security:
+      - [Network, Firewall, Access Control List (ACL)](https://www.geeksforgeeks.org/computer-network-tutorials/?ref=lbp)
+      - [Proxy servers](https://devopscube.com/setup-and-configure-proxy-server/)
+      - [Bastion hosts](https://www.youtube.com/watch?v=cfOaMeIv_Fk)
+    - Access management:
+      - Identify and access management
+      - Lightweight Directory Access Protocol (LDAP)
+    - Data transmission security
+      - HTTPS, SSH, SCP
+      - Tokens
+  
 
 ## Fundamental tools <a name=fundamentaltools></a>
 - [Docker](https://www.docker.com/) fundamentals

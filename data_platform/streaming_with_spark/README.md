@@ -5,5 +5,4 @@
 
 [Spark configurations](https://sparkbyexamples.com/spark/spark-submit-command/)
 
-
 [Kafka producer in Scala](https://sparkbyexamples.com/kafka/apache-kafka-consumer-producer-in-scala/)
