@@ -1,3 +1,7 @@
+# Scala ignore
+**/target
+**/apps/checkpoint
+**/.bsp/*
 # Byte-compiled / optimized / DLL files
 **/.idea
 __pycache__/

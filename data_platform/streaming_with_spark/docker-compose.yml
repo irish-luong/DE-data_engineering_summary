@@ -1,5 +1,11 @@
 version: "3.3"
+
+networks:
+  streaming:
+    driver: bridge
+
 services:
+# ============================ Spark Master ============================
   spark-master:
     image: cluster-apache-spark:3.0.2
     ports:
@@ -11,6 +17,10 @@ services:
     environment:
       - SPARK_LOCAL_IP=spark-master
       - SPARK_WORKLOAD=master
+    networks:
+      - streaming
+
+# ============================ Spark workers ============================
   spark-worker-a:
     image: cluster-apache-spark:3.0.2
     ports:
@@ -29,30 +39,19 @@ services:
     volumes:
        - ./apps:/opt/spark-apps
        - ./data:/opt/spark-data
-  spark-worker-b:
-    image: cluster-apache-spark:3.0.2
+    networks:
+      - streaming
+
+  # ============================ Buffer ============================
+  zookeeper:
+    image: confluentinc/cp-zookeeper:5.2.2
+    container_name: zookeeper
     ports:
-      - "9092:8080"
-      - "7001:7000"
-    depends_on:
-      - spark-master
+      - "2181:2181"
     environment:
-      - SPARK_MASTER=spark://spark-master:7077
-      - SPARK_WORKER_CORES=1
-      - SPARK_WORKER_MEMORY=1G
-      - SPARK_DRIVER_MEMORY=1G
-      - SPARK_EXECUTOR_MEMORY=1G
-      - SPARK_WORKLOAD=worker
-      - SPARK_LOCAL_IP=spark-worker-b
-    volumes:
-        - ./apps:/opt/spark-apps
-        - ./data:/opt/spark-data
-  demo-database:
-    image: postgres:11.7-alpine
-    ports:
-      - "5432:5432"
-    environment:
-      - POSTGRES_PASSWORD=casa1234
+      ZOOKEEPER_CLIENT_PORT: "2181"
+    networks:
+      - streaming
 
   kafka0:
     image: confluentinc/cp-kafka:5.2.2
@@ -70,3 +69,16 @@ services:
       - streaming
     depends_on:
       - "zookeeper"
+
+# ============================ Persistence store ============================
+  postgres:
+    image: postgres:11
+    container_name: stream_postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: "cta_admin"
+      POSTGRES_PASSWORD: "chicago"
+      POSTGRES_DB: "cta"
+    networks:
+      - streaming

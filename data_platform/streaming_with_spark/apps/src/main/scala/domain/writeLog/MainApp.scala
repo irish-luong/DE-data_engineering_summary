@@ -1,4 +1,4 @@
-package writeLog
+package domain.writeLog
 
 import org.apache.spark.sql.SparkSession
 
@@ -11,7 +11,7 @@ object MainApp {
         .builder()
         .config("spark.sql.streaming.checkpointLocation", "checkpoint")
         .appName("duc_local")
-        .master(sys.env.getOrElse("SPARK_MASTER", "local[*]"))
+        .master("spark://spark-master:7077")
         .getOrCreate()
 
 
@@ -20,7 +20,7 @@ object MainApp {
       .format("kafka")
       .option(
         "kafka.bootstrap.servers",
-        sys.env.getOrElse("KAFKA_BOOTSTRAP_SERVER", "localhost:9092")
+        "http://172.20.0.5:9092"
       )
       .option(
         "auto.offset.reset", "latest"
@@ -28,6 +28,10 @@ object MainApp {
       .option(
         "subscribe",
         sys.env.getOrElse("KAFKA_TOPICS", "source_log")
+      )
+      .option(
+        "group.id",
+        "duc-tmp"
       )
       .load()
 
@@ -39,12 +43,3 @@ object MainApp {
   }
 
 }
-
-//./bin/spark-submit  \
-//  --master spark://localhost:7077 \
-//  --deploy-mode client \
-//  --driver-memory 1g \
-//  --executor-memory 1g \
-//  --executor-cores 1  \
-//  --class writeLog.MainApp\
-//  "/opt/spark-apps/target/scala-2.13/apps_2.13-0.1.jar"

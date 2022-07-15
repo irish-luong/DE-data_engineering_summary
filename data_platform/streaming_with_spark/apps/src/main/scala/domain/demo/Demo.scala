@@ -1,4 +1,4 @@
-package demo
+package domain.demo
 
 import org.apache.spark.sql.{Row, SparkSession}
 import org.apache.spark.sql.types.{StringType, StructField, StructType}
