@@ -182,19 +182,38 @@ This is collection of projects, practices in data engineering foundation
     - Hadoop
     
 
-  - Platform pipeline security
+  - **Platform pipeline security**
     - Network security:
       - [Network, Firewall, Access Control List (ACL)](https://www.geeksforgeeks.org/computer-network-tutorials/?ref=lbp)
       - [Proxy servers](https://devopscube.com/setup-and-configure-proxy-server/)
       - [Bastion hosts](https://www.youtube.com/watch?v=cfOaMeIv_Fk)
     - Access management:
       - Identify and access management
+        - Identity management answers "who am I?"
+        - Access management answers "what is my role?"
       - Lightweight Directory Access Protocol (LDAP)
+        - [Squid LDAP](https://workaround.org/squid-ldap/)
+        - [Openldap](https://www.openldap.org/)
+        - Connection process:
+          - Connect: client make a request for connection to server
+          - Bind (anonymous or login): client send authentication information
+          - Search: client send to server it's search requirement
+          - Interpret search: sever search information requested
+          - Result: server response to client
+          - Unbind: client send request for closing connection
+          - Close connection: close connection totally
     - Data transmission security
       - HTTPS, SSH, SCP
       - Tokens
-  
+        - [OAth 2.0 with Okta](https://www.oauth.com/)
+        - [Twitter Authentication](https://developer.twitter.com/en/docs/authentication/overview)
+        
 
+  - **Choosing data store**
+    - Data store basics
+    - Relational database
+    - NoSQL database
+    - Data Warehouses & Data Lake
 ## Fundamental tools <a name=fundamentaltools></a>
 - [Docker](https://www.docker.com/) fundamentals
 - [Kubenestes](https://kubernetes.io/) fundamentals
