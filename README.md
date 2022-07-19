@@ -211,9 +211,113 @@ This is collection of projects, practices in data engineering foundation
 
   - **Choosing data store**
     - Data store basics
-    - Relational database
-    - NoSQL database
-    - Data Warehouses & Data Lake
+      - OLTP vs OLAP
+      - ELT vs ELT
+      - [Data store library]
+  
+| Spec          | OLTP                        | OLAP                                |
+|---------------|-----------------------------|-------------------------------------|
+| Use case      | Main business purpose       | Business Intelligence               |
+| Structure     | Very structured (normalize) | Less structure (denormalize)        |
+| Ingestion     | Transactional               | Data gets copied in                 |
+| Size of piece | Small transaction           | Insight into larger amounts of data |
+| Users         | User interfaces             | Access by Analysts by BI tools      |
+| Down stream   | Other systems               | Data source for ML applications     |
+
+![ETL_ELT](static/Data Pipeline Security-ETL_ELT.drawio.png)
+  - **Relational database**
+    - Very structured (Schema at design)
+    - Table with columns and rows
+    - Relationship between tables (primary key and foreign key)
+    - SQL language for queries
+    - CRUD (create, read, update, delete)
+    - ACID
+      - Atomic: all or nothing (commit and rollback)
+      - Consistency: data will be valid
+      - Isolation: transaction will not affect each others
+      - Durability: if it is in the system, it will be in the system
+    - Examples: MSSQL, MySQL, PostgreSQL, Oracle
+  
+
+  - **NoSQL database**
+    - Basics
+    - Document stores:
+      - **Often JSON documents**
+      - Store information together in one documents
+      - Second model often document indexing
+      - Big upside compared to index of relational databases
+      - Examples:
+        - MongoDB
+        - DynamoDB
+        - CosmosDB
+    - Time Series Databases:
+      - Perfect for storing **high frequency time based measurement**
+      - Simple query model for visualizing on dashboard
+      - Fast read and write speed
+      - Hotspoting is dangerous
+      - Big upside compared with timestamp index on relational databases
+      - Examples:
+        - InfluxDB
+        - TimescaleDB
+        - OpenTSDB
+    - Search engine:
+      - Indexing of documents (JSON)
+      - Very fast and versatile
+      - Great for logging and monitoring compared with log file
+      - ELK(Elasticsearch - Logstash - Kibana) is a well-known stack includes 
+      visualization tool
+      - Examples:
+        - Elasticsearch
+        - Spunk
+        - Solr
+    - Wide column stores:
+      - Main purpose for changing and dynamic schema
+        - Columns are not predefined
+        - Columns can change with every row
+        - Millions columns are possible
+      - Indexing is harder than with document store
+      - Examples:
+        - Apache Cassandra
+        - Bigtable
+        - Scylla
+    - Key-value stores:
+      - Very simple store (just key and value)
+      - Quick read/write performance
+      - Slow random read performance
+      - Key often sorted for speeding up sequential reading
+      - Examples:
+        - Redis
+        - KeyDB
+        - Memcached
+    - Graph databases
+      - Store nodes and relationships instead of tables or documents
+      - When we think connections between items as the important as the items themselves.
+![source https://neo4j.com/developer/graph-database/](graphDB.png)
+
+    (source: _https://neo4j.com/developer/graph-database/_)
+  - **Data Warehouses**
+    - Used for analytical insight by data analysts or domain experts
+    - Usually visualize by BI tools
+    - Tabular structure makes them easy to use by SQL and JOIN
+    - [Star, snowflake and galaxy schema](https://www.guru99.com/star-snowflake-data-warehousing.html)
+    - Dimensional modeling with dimensional and fact table
+    - Often no "transaction" and ACID tradeoffs
+    - Not used as operational databases
+    - Examples:
+      - Hive
+      - Redshift
+      - Bigquery
+      
+  - **Data Lake:**
+    - Raw data storage, usually files (json, parquet, csv, txt,....)
+    - High performance and storage size friendly
+    - Hard to random query then use for data warehouse or processing framework (Spark)
+    - Data catalogues like AWS Glue help to prevent data lake become data swamps
+    - Examples:
+      - AWS S3
+      - Google cloud storage
+      - HDFS (Hadoop Distributed file system)
+
 ## Fundamental tools <a name=fundamentaltools></a>
 - [Docker](https://www.docker.com/) fundamentals
 - [Kubenestes](https://kubernetes.io/) fundamentals
