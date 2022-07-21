@@ -1,0 +1,19 @@
+version: "3.7"
+
+networks:
+  spark:
+    driver: bridge
+
+services:
+  notebook:
+    container_name: spark-notebook
+    image: jupyter/all-spark-notebook
+    ports:
+      - "8888:8888"
+    networks:
+      - spark
+    volumes:
+      - ./work:/home/jovyan/work
+    entrypoint: start-notebook.sh
+    command:
+      - --NotebookApp.token='123'

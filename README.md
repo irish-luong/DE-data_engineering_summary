@@ -11,9 +11,10 @@ This is collection of projects, practices in data engineering foundation
 - [Python for data engineer](#py4de)
 - [SQL intensive](#sqlintensive)
 - [Platform and Pipeline design foundations](#platform&pipelinedesign)
+- [Data schema design](#schemadesign)
 - [Fundamental tools](#fundamentaltools)
 
-## Data engineering foundations <a name="def"></a>
+## A. Data engineering foundations <a name="def"></a>
 - Diagrams:
   - UML diagram
   - Sequence diagram
@@ -85,7 +86,7 @@ This is collection of projects, practices in data engineering foundation
   - [API design](https://cloud.google.com/apis/design)
   - [Swagger](https://swagger.io)
 
-## Python for data engineer <a name="py4de"></a>
+## B. Python for data engineer <a name="py4de"></a>
 - Advanced Python:
   - Class
   - Modules
@@ -119,101 +120,100 @@ This is collection of projects, practices in data engineering foundation
       - Query
 
 
-## SQL intensive <a name="sqlintensive" ></a>
+## C. SQL intensive <a name="sqlintensive" ></a>
 
-## Platform and Pipeline design foundations <a name="platform&pipelinedesign"></a>
-  - The platform blueprint
-    - Sources
-      - External API
-      - External data warehouse
-      - External SQL/No-SQL database
-    - Temporary storage - buffer
-      - Cache
-      - Message queue
-    - Processing
-      - Batch processing
-      - Stream processing
-    - Persistence storage
-      - SQL database
-      - No-SQL database
-      - DWH
-      - OLAP
-  - Ingestion pipelines
-    - Push ingestion pipeline
-    - Pull ingestion pipeline
-  - Batch pipelines
-    - Store
-    - Processing framework (ELT/ELT)
-    - Scheduling
-    - Workflow orchestration
-  - Stream pipelines
-    - For ingestion purpose (push ingestion pipeline)
-    - Stream analytic
-      - Seed only small window
-      - Immediately processing
-      - Preprocessing on the fly
-      - Push result to
-        - Buffer
-        - Storage
-  - [**Lambda architecture**](https://hazelcast.com/glossary/lambda-architecture/)
-    - Kafka -> Spark streaming -> [Store 1 for batch, Store for stream]
-    - Airflow -> Spark processing/Python script -> Store 1 -> Store 2
-    - Dashboard -> Store 2
-    ![img_1.png](static/lambda_architecture.png)
+## D. Platform and Pipeline design foundations <a name="platform&pipelinedesign"></a>
+### 1. The platform blueprint
+- Sources
+  - External API
+  - External data warehouse
+  - External SQL/No-SQL database
+- Temporary storage - buffer
+  - Cache
+  - Message queue
+- Processing
+  - Batch processing
+  - Stream processing
+- Persistence storage
+  - SQL database
+  - No-SQL database
+  - DWH
+  - OLAP
+- Ingestion pipelines
+  - Push ingestion pipeline
+  - Pull ingestion pipeline
+- Batch pipelines
+  - Store
+  - Processing framework (ELT/ELT)
+  - Scheduling
+  - Workflow orchestration
+- Stream pipelines
+  - For ingestion purpose (push ingestion pipeline)
+  - Stream analytic
+    - Seed only small window
+    - Immediately processing
+    - Preprocessing on the fly
+    - Push result to
+      - Buffer
+      - Storage
+- [**Lambda architecture**](https://hazelcast.com/glossary/lambda-architecture/)
+  - Kafka -> Spark streaming -> [Store 1 for batch, Store for stream]
+  - Airflow -> Spark processing/Python script -> Store 1 -> Store 2
+  - Dashboard -> Store 2
+  ![img_1.png](static/lambda_architecture.png)
   
-  - [**Kappa architecture**](https://hazelcast.com/glossary/kappa-architecture/)
-    ![img.png](static/kappa_architecture.png)
+- [**Kappa architecture**](https://hazelcast.com/glossary/kappa-architecture/)
+  ![img.png](static/kappa_architecture.png)
 
-  - Data visualization pipelines
-    - Data store
-      - Operational database
-      - No-SQL database
-      - Data warehouse
-    - Visualization tools (BI tools, Web UI, Dashboard)
-    - API access data from store
-    - Open-gateway data publish to subscribers
-  - Machine learning pipelines
-  - Platform examples (AWS, Azure, GCP, Hadoop)
-    - AWS
-    ![AWS](static/aws_platform_example.png)
-    - Azure (Source: )
-    ![Azure](static/azure_platform_example.png)
-    - GCP
-    - Hadoop
+- Data visualization pipelines
+  - Data store
+    - Operational database
+    - No-SQL database
+    - Data warehouse
+  - Visualization tools (BI tools, Web UI, Dashboard)
+  - API access data from store
+  - Open-gateway data publish to subscribers
+- Machine learning pipelines
+- Platform examples (AWS, Azure, GCP, Hadoop)
+  - AWS
+  ![AWS](static/aws_platform_example.png)
+  - Azure (Source: )
+  ![Azure](static/azure_platform_example.png)
+  - GCP
+  - Hadoop
     
-
-  - **Platform pipeline security**
-    - Network security:
-      - [Network, Firewall, Access Control List (ACL)](https://www.geeksforgeeks.org/computer-network-tutorials/?ref=lbp)
-      - [Proxy servers](https://devopscube.com/setup-and-configure-proxy-server/)
-      - [Bastion hosts](https://www.youtube.com/watch?v=cfOaMeIv_Fk)
-    - Access management:
-      - Identify and access management
-        - Identity management answers "who am I?"
-        - Access management answers "what is my role?"
-      - Lightweight Directory Access Protocol (LDAP)
-        - [Squid LDAP](https://workaround.org/squid-ldap/)
-        - [Openldap](https://www.openldap.org/)
-        - Connection process:
-          - Connect: client make a request for connection to server
-          - Bind (anonymous or login): client send authentication information
-          - Search: client send to server it's search requirement
-          - Interpret search: sever search information requested
-          - Result: server response to client
-          - Unbind: client send request for closing connection
-          - Close connection: close connection totally
-    - Data transmission security
-      - HTTPS, SSH, SCP
-      - Tokens
-        - [OAth 2.0 with Okta](https://www.oauth.com/)
-        - [Twitter Authentication](https://developer.twitter.com/en/docs/authentication/overview)
+### **Platform pipeline security**
+  - Network security:
+    - [Network, Firewall, Access Control List (ACL)](https://www.geeksforgeeks.org/computer-network-tutorials/?ref=lbp)
+    - [Proxy servers](https://devopscube.com/setup-and-configure-proxy-server/)
+    - [Bastion hosts](https://www.youtube.com/watch?v=cfOaMeIv_Fk)
+  - Access management:
+    - Identify and access management
+      - Identity management answers "who am I?"
+      - Access management answers "what is my role?"
+    - Lightweight Directory Access Protocol (LDAP)
+      - [Squid LDAP](https://workaround.org/squid-ldap/)
+      - [Openldap](https://www.openldap.org/)
+      - Connection process:
+        - Connect: client make a request for connection to server
+        - Bind (anonymous or login): client send authentication information
+        - Search: client send to server it's search requirement
+        - Interpret search: sever search information requested
+        - Result: server response to client
+        - Unbind: client send request for closing connection
+        - Close connection: close connection totally
+  - Data transmission security
+    - HTTPS, SSH, SCP
+    - Tokens
+      - [OAth 2.0 with Okta](https://www.oauth.com/)
+      - [Twitter Authentication](https://developer.twitter.com/en/docs/authentication/overview)
         
 
-  - **Choosing data store**
-    - Data store basics
-      - OLTP vs OLAP
-      - ELT vs ELT
-      - [Data store library]
+### **Choosing data store**
+- Data store basics
+  - OLTP vs OLAP
+  - ELT vs ELT
+  - [Data store library]
   
 | Spec          | OLTP                        | OLAP                                |
 |---------------|-----------------------------|-------------------------------------|
@@ -292,7 +292,7 @@ This is collection of projects, practices in data engineering foundation
     - Graph databases
       - Store nodes and relationships instead of tables or documents
       - When we think connections between items as the important as the items themselves.
-![source https://neo4j.com/developer/graph-database/](graphDB.png)
+![source https://neo4j.com/developer/graph-database/](static/graphDB.png)
 
     (source: _https://neo4j.com/developer/graph-database/_)
   - **Data Warehouses**
@@ -318,14 +318,75 @@ This is collection of projects, practices in data engineering foundation
       - Google cloud storage
       - HDFS (Hadoop Distributed file system)
 
-## Fundamental tools <a name=fundamentaltools></a>
-- [Docker](https://www.docker.com/) fundamentals
-- [Kubenestes](https://kubernetes.io/) fundamentals
-- Design API with [FastAPI](https://fastapi.tiangolo.com/)
-- Data-intensive and sharable web-app with [Streamlit](https://streamlit.io/)
-- Apache Spark fundamentals
-- Apache Kafka
-- Apache Airflow
-- MongoDB fundamental
-- Modern data warehouses & data lakes
-- Log analysis with Elasticsearch
+## E. Data schema design <a name="schemadesign"></a>
+  - Why schema design is important
+    - Schema help user to ensure quality of data not related to what kind 
+of data store (relational or No-SQL)
+    - Help organization achieve the goal of business
+    - Prevent to generate a data swamp
+  - Entity relationship diagram
+  - Schema in wide column store
+  - Schema in document store
+  - Schema in key-value store
+  - Data warehouse fact and dimension modeling
+
+
+## F. Fundamental tools <a name=fundamentaltools></a>
+### Apache Spark fundamentals
+  - Scaling:
+    - Resources
+      - Vertical:
+        - Increase CPU capacity (number of cores / processor)
+        - Increase memory (RAM, Buffer)
+        - Increase storage
+      - Horizontal:
+        - Increase number of machines
+    - Computing ability:
+      - Parallel processing
+      - Sequential processing
+      - Concurrency processing
+  - What is Spark good for?
+    - Batch processing in huge (BT/TB/PB) dataset
+    - Stream processing with message queues like Kafka
+    - Processing data on Hadoop
+    - Various datatype of input
+      - CSV
+      - JSON
+      - Parquet
+      - Hadoop
+      - ODBC connection
+      - REST calls
+      - AWS S3
+      - Google cloud storage
+      - Kafka
+      - ....
+    - Processing data on memory instead of disk
+  - [Spark cluster overview](https://spark.apache.org/docs/latest/cluster-overview.html):
+    - Spark executor (worker)
+      - Run task on its node
+    - Spark driver + context
+      - Schedule task on executors
+      - Context is main entrypoint
+    - Spark cluster manager
+      - Manage resource of clusters
+  ![source: https://spark.apache.org/docs/latest/cluster-overview.html](static/spark_cluster_overview.png)
+
+
+  - Cluster types:
+    - **Standalone**: basic cluster manager that comes with Spark
+    - **Kubernetes**: managers for deploying containerized applications
+    - **Hadoop YARN**: main resource manager of Hadoop cluster
+    - **Apache Mesos (Deprecated)**: manager for running Hadoop MapReduce
+  
+  - Client and cluster management:
+    - Client:
+      - Driver & Context lives inside the client
+      - Driver connect to and schedule task on executors 
+      - Jobs shutdown when client quit
+      - Spark acquires executor from resource manager
+      - Good for developing, debug
+    - Cluster
+      - Driver lives inside Spark application master
+      - Independent of starting application
+      - Production environment
+  ![park-client-cluster-mode](static/spark-client-cluster-mode.png)
