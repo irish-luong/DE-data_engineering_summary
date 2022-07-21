@@ -400,19 +400,25 @@ of data store (relational or No-SQL)
   - Transformation and Action:
     - Transformation
       - Will create a new dataframe
+      - Do not send data back to the driver
       - RDD is immutable
       - Schema is defined eagerly
-      - Transformation is executed lazily
+      - Transformation is executed lazily parallel
       - Two types:
         - Narrow transformation:
           - All records in a single partition of parent are processed
           - Functions:
 ![narrow_transformation](static/narrow_transformation.png)
-
         - Wide transformation:
           - All records in many partitions of parent are processed
 ![wide_transformation.png](static/wide_transformation.png)
     - Action:
+      - Send data back to the driver
       - Action is executed eagerly
       - Action compute the transformations of dataframe -> output 
       - Query = transformation + action
+      - Actions:
+        - count()
+        - first()
+        - take(n)
+        - collect()
