@@ -390,3 +390,29 @@ of data store (relational or No-SQL)
       - Independent of starting application
       - Production environment
   ![park-client-cluster-mode](static/spark-client-cluster-mode.png)
+
+  - Where to run Spark:
+    - **Standalone**
+    - Hadoop
+    - AWS EMR/Glue
+    - Google cloud Dataproc
+    - Azure HDInsight
+  - Transformation and Action:
+    - Transformation
+      - Will create a new dataframe
+      - RDD is immutable
+      - Schema is defined eagerly
+      - Transformation is executed lazily
+      - Two types:
+        - Narrow transformation:
+          - All records in a single partition of parent are processed
+          - Functions:
+![narrow_transformation](static/narrow_transformation.png)
+
+        - Wide transformation:
+          - All records in many partitions of parent are processed
+![wide_transformation.png](static/wide_transformation.png)
+    - Action:
+      - Action is executed eagerly
+      - Action compute the transformations of dataframe -> output 
+      - Query = transformation + action
