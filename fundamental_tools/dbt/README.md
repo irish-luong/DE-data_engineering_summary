@@ -42,3 +42,5 @@ to Extract-Load-Transform (ELT)?**
    
 **4. Which one of the following is true about YAML files in dbt?**
    - YAML files are used for configuring generic tests
+
+5. What is required to materialize a model in your data platform with dbt?
