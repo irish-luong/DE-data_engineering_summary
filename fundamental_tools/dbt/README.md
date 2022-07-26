@@ -40,6 +40,50 @@ engineers transform data in their data warehouse more effectively.
    - Fact (fct) refers to any data that represents something that occurred or is occurring. Examples include sessions, transactions, orders, stories, votes. These are typically skinny, long tables.
    - Dimension (dim) refers to data that represents a person, place or thing. Examples include customers, products, candidates, buildings, employees. Note: The Fact and Dimension convention is based on previous normalized modeling techniques.
 ### 2. Source
+- Sources represent the raw data that is loaded into the data warehouse.
+- We can reference tables in our models with an explicit table name (raw.jaffle_shop.customers).
+- However, setting up Sources in dbt and referring to them with the source function enables a few important tools.
+- Multiple tables from a single source can be configured in one place.
+- Sources are easily identified as green nodes in the Lineage Graph.
+- You can use dbt source freshness to check the freshness of raw tables.
+
+- Configuration and select from source
+```yaml
+version: 2
+sources:
+  - name: stripe
+    schema: stripe
+    tables:
+      - name: payment
+```
+
+```
+select
+    orderid as order_id,
+    amount / 100 as amount,
+    status
+from {{ source('stripe', 'payment') }}
+````
+
+- Source freshness
+```yaml
+version: 2
+
+sources:
+  - name: stripe
+    schema: stripe
+    tables:
+      - name: payment
+        loaded_at_field: _batched_at
+        freshness:
+            warn_after: {count: 12, period: hour}
+            error_after: {count: 24, period: hour}
+```
+
+- Run freshness:
+```commandline
+$ dbt source freshness
+```
 ### 3. Test
 ### 4. Document
 ### 5. Deployment
