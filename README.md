@@ -13,6 +13,8 @@ This is collection of projects, practices in data engineering foundation
 - [Platform and Pipeline design foundations](#platform&pipelinedesign)
 - [Data schema design](#schemadesign)
 - [Fundamental tools](#fundamentaltools)
+- [Online learning platform & documents](#learning)
+
 
 ## A. Data engineering foundations <a name="def"></a>
 - Diagrams:
@@ -418,7 +420,23 @@ of data store (relational or No-SQL)
       - Action compute the transformations of dataframe -> output 
       - Query = transformation + action
       - Actions:
-        - count()
+        - count() 
         - first()
         - take(n)
         - collect()
+
+## G. Online learning platform and documents
+
+| **Platform**                                                                  | **Purpose**                      |
+|---------------------------------------------------------------------------|------------------------------|
+| [Udacity](https://www.udacity.com/course/data-engineer-nanodegree--nd027) | Career building              |
+| [Coursera](https://www.coursera.org/)                                     | General purpose              | 
+| [Edx](https://www.edx.org/)                                               | More academic                | 
+| [Udemy](https://www.udemy.com/)                                           | Uptrend technology           | 
+| [Learning Data Engineering](https://learndataengineering.com/p/academy)   | Focus on data engineering    |
+| [Tutorialspoint](https://www.tutorialspoint.com/)                         | Ebook and new techology      |
+| [Educative](https://www.educative.io)                                     | Software engineering         |
+| [Data Camp](https://www.datacamp.com/)                                    | Focus data Science           |
+| [Exercism](https://exercism.org/dashboard)                                | Coding exercise              |
+| [Codecademy](https://www.codecademy.com/learn/paths/data-science)         | Build career path            |
+| [Freecodecamp](https://www.freecodecamp.org/)                             | Technology news and learning |
