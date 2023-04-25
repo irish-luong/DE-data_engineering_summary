@@ -13,6 +13,7 @@ This is collection of projects, practices in data engineering foundation
 - [Platform and Pipeline design foundations](#platform&pipelinedesign)
 - [Data schema design](#schemadesign)
 - [Fundamental tools](#fundamentaltools)
+- [Data architect](#daa)
 
 ## A. Data engineering foundations <a name="def"></a>
 - Diagrams:
@@ -422,3 +423,15 @@ of data store (relational or No-SQL)
         - first()
         - take(n)
         - collect()
+        
+## E. Data Architect<a name="daa"></a>
+### What should we concern
+- Storage
+- Software
+- Data flow
+- Interfaces
+- Transformations
+- Staging areas
+- Data warehouse
+- Reporting
+- ML product
