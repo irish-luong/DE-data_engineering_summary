@@ -331,6 +331,26 @@ of data store (relational or No-SQL)
   - Schema in key-value store
   - Data warehouse fact and dimension modeling
 
+### Database Taxonomy
+
+- Data Model
+  1. Relational
+  2. Hierarchical
+  3. Network
+  4. Document
+  5. Dimensional
+
+- Storage Medium	
+  1. In-memory database
+  2. Disk-based database
+
+- Disk Layout
+  1. Row oriented
+  2. Column oriented
+
+- Access pattern
+  1. OLTP
+  2. OLAP 
 
 ## F. Fundamental tools <a name=fundamentaltools></a>
 ### Apache Spark fundamentals
@@ -424,7 +444,7 @@ of data store (relational or No-SQL)
         - take(n)
         - collect()
         
-## E. Data Architect<a name="daa"></a>
+## G. Data Architect<a name="daa"></a>
 ### What should we concern
 - Storage
 - Software
