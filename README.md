@@ -430,8 +430,10 @@ of data store (relational or No-SQL)
 - Software
 - Data flow
 - Interfaces
+- Data sources
 - Transformations
 - Staging areas
+- Operational Data Store
 - Data warehouse
 - Reporting
 - ML product
