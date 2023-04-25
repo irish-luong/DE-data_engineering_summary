@@ -437,3 +437,10 @@ of data store (relational or No-SQL)
 - Data warehouse
 - Reporting
 - ML product
+### Artifacts of an Enterprise Data Architecture
+- Data dictionary: helps to standardize business vocabulary
+- Enterprise data models: used to create an ODS (Operational Data Store).
+- Data flow: enable a smooth transition of data movements crossing various silos. We will discuss data flows later in the course
+- Data stewardship: specifies who can access what data
+- Dimensional models: used to create a data warehouse structure for effective reporting and analytics
+- Data sharing agreements: articulate who can access what data
