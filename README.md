@@ -364,11 +364,10 @@ of data store (relational or No-SQL)
 - Storage engine: the storage engine is the core module of DBMS. It is responsible for handling the storage and recovery of data in the database and facilitating access and manipulating data in the filesystem:
   - The transaction manager is responsible for coordinating one or more operations on the data structures part of the storage structures module. It ensures that the entire sequence of operations is either executed successfully or rolled back, leaving no partial updates
   - The lock manager is responsible for holding lock objects on database entities for currently executing database operations and ensures that concurrently running processes do not overwrite each other's values. This provides consistency and predictability.
-
-- Storage structures: Storage structures are the data structures laid out on the disk or memory for storing data for efficient retrieval and manipulation.
-- Cache manager: a cache manager (also called a buffer manager) to cache disk pages in the main memory for faster lookups and to reduce disk access requests
-- The recovery manager maintains an append-only data structure that stores every write operation applied to the DBMS in a log file for recovery. The recovery manager serves as a persistent intermediate store for all write requests.
-- The catalog is a metadata store containing schema definitions of various database objects and indexes, users and their roles, and statistical information such as index cardinality and data placement.
+  - Storage structures: Storage structures are the data structures laid out on the disk or memory for storing data for efficient retrieval and manipulation.
+  - Cache manager: a cache manager (also called a buffer manager) to cache disk pages in the main memory for faster lookups and to reduce disk access requests
+  - The recovery manager maintains an append-only data structure that stores every write operation applied to the DBMS in a log file for recovery. The recovery manager serves as a persistent intermediate store for all write requests.
+  - The catalog is a metadata store containing schema definitions of various database objects and indexes, users and their roles, and statistical information such as index cardinality and data placement.
 
 ## F. Fundamental tools <a name=fundamentaltools></a>
 ### Apache Spark fundamentals
