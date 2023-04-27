@@ -481,5 +481,5 @@ of data store (relational or No-SQL)
 - Data sharing agreements: articulate who can access what data
 
 ### Typical dataflow for a good architecture
-![Screenshot 2023-04-27 at 13.59.58.png](static/Screenshot 2023-04-27 at 13.59.58.png)
+![dataflow.png](static/dataflow.png)
 
