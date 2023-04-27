@@ -479,3 +479,7 @@ of data store (relational or No-SQL)
 - Data stewardship: specifies who can access what data
 - Dimensional models: used to create a data warehouse structure for effective reporting and analytics
 - Data sharing agreements: articulate who can access what data
+
+### Typical dataflow for a good architecture
+![Screenshot 2023-04-27 at 13.59.58.png](static/Screenshot 2023-04-27 at 13.59.58.png)
+
