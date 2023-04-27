@@ -353,6 +353,9 @@ of data store (relational or No-SQL)
   2. OLAP 
 
 ### Core Components of Databases
+
+![database_architecture.png](static/database_architecture.png)
+
 - Query processor: the query processor is responsible for receiving the user input and translating it into an execution format suitable for the execution engine. The query processor includes two submodules:
   - Query parser
   - Query optimizer
