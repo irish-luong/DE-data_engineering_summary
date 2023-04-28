@@ -498,3 +498,12 @@ Because the metadata schema is in table format itself and stored in a database, 
 - Incorrectly selecting the right technology stack for desired scaling and performance
 - Companies are not agile
 - Business requirements change before a system is implemented
+
+### Data Architecture Design
+
+### ODS (Operational Data Store)
+#### 1. Definition
+An Operational Data Store is a centralized database that provides a current/recent "snapshot" of the data from all ingested transactional systems. It is especially used for operational reporting. It allows organizations to combine data from the original format, even if different, from various external and internal sources into a single centralized location, which provides access for business reporting. It has 2 main functions:
+
+- Keep a clean copy of data sets coming from multiple sources
+- Keep this as a source for the data warehouse.
