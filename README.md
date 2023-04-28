@@ -369,6 +369,15 @@ of data store (relational or No-SQL)
   - The recovery manager maintains an append-only data structure that stores every write operation applied to the DBMS in a log file for recovery. The recovery manager serves as a persistent intermediate store for all write requests.
   - The catalog is a metadata store containing schema definitions of various database objects and indexes, users and their roles, and statistical information such as index cardinality and data placement.
 
+### Metadatabase Schema
+![metadataschema](static/metadataschema.png)
+A metadatabase schema is a higher-level schema made up of all of the other schemas of the staging area. The major components of the metadata included:
+- Source
+- Files
+- Fields
+- Business rules
+Because the metadata schema is in table format itself and stored in a database, changes can be managed easily by the production operations team via a central webpage
+
 ## F. Fundamental tools <a name=fundamentaltools></a>
 ### Apache Spark fundamentals
   - Scaling:
