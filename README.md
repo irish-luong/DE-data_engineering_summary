@@ -493,4 +493,8 @@ Because the metadata schema is in table format itself and stored in a database, 
 
 ### Typical dataflow for a good architecture
 ![dataflow.png](static/dataflow.png)
-
+### [What make a data platform project fail](https://blogs.gartner.com/andrew_white/2019/01/03/our-top-data-and-analytics-predicts-for-2019/)
+- Lack of leadership agreement
+- Incorrectly selecting the right technology stack for desired scaling and performance
+- Companies are not agile
+- Business requirements change before a system is implemented
